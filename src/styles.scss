@@ -1,1 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap-scss/bootstrap.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Teko&family=Teko&display=swap');
+
+$turquoise: #44ddd0;
+$blue: #276dd7;
+$dark-blue: #1985e4;
+$danger: #e27e7e;
+
+$light: #f4f4f4;
+
+$family-sans-serif: "Teko";
+$primary: $blue;
+
+$control-border-width: 2px;
+$input-border-color: transparent;
+$imput-shadow: none;
+
+html,body {
+    background: linear-gradient(to right top, $turquoise, $blue);//sets the background of an element to a linear gradient that goes from the right side to the top of the element.
+}
+
+html,body {
+    font-family: Teko;
+    height: 100%;
+}
+
+.white-text {
+    color: white;
+}
+
+.title {
+    color: white;
+    font-family: "Teko";
+    font-size: 24px;
+    text-transform: upppercase;
+    letter-spacing: 2px;
+}
+
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-box {
+    min-height: 200px;
+    width: 100%;
+    max-width: 580px;
+    background: #201d1d;
+    border-radius: 5px;
+    padding: 35px;
+}
+
+.has-background-light {
+    background: $light;
+}
+
+.is-primary {
+    background: $primary;
+}

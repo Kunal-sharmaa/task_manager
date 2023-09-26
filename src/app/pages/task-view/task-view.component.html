@@ -1,0 +1,32 @@
+<div class="centered-content">
+    <div class="task-manager-container">
+        <div class="sidebar">
+            <h1 class="title has-text-primary">Lists</h1>
+            <div class="list-menu">
+                <a class="list-menu-item " *ngFor="let list of lists"  [routerLink]="['/lists',list._id]" routerLinkActive="is-active">
+                    <p class="white-text">{{list.title}}
+                        <span class="pull-right task-delete btn-rounded-corners" (click)="deleteList(list)">X</span>
+                    </p>
+                </a>
+            </div>
+            <button class="btn btn-primary btn-rounded-corners" routerLink="/new-list">Add List</button>
+        </div>
+        <div class="task-list-container">
+            <h1 class="title has-text-primary">Tasks</h1>
+            <div class="task"  [class.complete]="task.completed" *ngFor="let task of tasks" (click)="onTaskClick(task)">
+                <!-- Have a doubt in this one as when we are clicking the close button to delete the task it is setting the div completed -->
+                <p class="white-text" >
+                    {{task.title}}
+                    <span class="pull-right task-delete btn-rounded-corners" (click)="deleteTask(task)">X</span>
+                </p>
+            </div>
+            <!-- In our css the button is absolute, which means it will check the first parent container 
+                if parent container position is relative, the the position of button will be relative to that container.
+                - If we remove the relative conditioning from the parent container then it will be relative to the body not the container.
+            -->
+            <button class="btn btn-primary add-button" (click)="addTask()">
+                +
+            </button>
+        </div>
+    </div>
+</div>
